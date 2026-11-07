@@ -1,3 +1,8 @@
+---
+layout: default
+title: Support
+---
+
 # FORGE Support
 
 Need help with FORGE, found a bug, or have an idea? **[Open an issue](https://github.com/tajshaik24/forge-app/issues/new)** and include your iPhone and Apple Watch models and iOS version. Screenshots help.

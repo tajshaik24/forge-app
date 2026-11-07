@@ -1,3 +1,8 @@
+---
+layout: default
+title: Privacy Policy
+---
+
 # FORGE Privacy Policy
 
 _Effective October 31, 2026_

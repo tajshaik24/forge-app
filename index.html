@@ -13,9 +13,10 @@ landing: true
 .strip { display: flex; gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 40px 20px 28px; margin: 0 auto; max-width: 1240px; scrollbar-width: none; }
 .strip::-webkit-scrollbar { display: none; }
 @media (min-width: 1240px) { .strip { justify-content: center; } }
-figure.phone { margin: 0; flex: 0 0 auto; width: 200px; scroll-snap-align: center; text-align: center; }
-.frame { background: var(--bezel); padding: 7px; border-radius: 36px; box-shadow: 0 18px 40px -18px rgba(0,0,0,.35); }
-.frame img { display: block; width: 100%; aspect-ratio: 585 / 1266; object-fit: cover; object-position: top; border-radius: 29px; }
+figure.phone { margin: 0; flex: 0 0 auto; width: 200px; scroll-snap-align: start; scroll-margin-left: 20px; text-align: center; }
+.frame { background: var(--bezel); padding: 7px; border-radius: 36px; overflow: hidden; box-shadow: 0 18px 40px -18px rgba(0,0,0,.35); }
+.frame picture { display: block; }
+.frame img { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: 585 / 1266; object-fit: cover; object-position: top; border-radius: 29px; }
 figure.phone figcaption { font-size: 14px; color: var(--muted); margin-top: 12px; }
 .hint { text-align: center; color: var(--muted); font-size: 13px; margin: 0; }
 @media (min-width: 1240px) { .hint { display: none; } }

@@ -5,7 +5,7 @@ title: Privacy Policy
 
 # FORGE Privacy Policy
 
-_Effective October 31, 2026_
+_Effective November 11, 2026_
 
 FORGE is a strength-training app for iPhone and Apple Watch. It has no account, no FORGE server, no ads, no analytics and no tracking. The developer does not collect, see or sell any of your data.
 
@@ -26,6 +26,10 @@ Health data is used only to run your workouts and plan your training. It is neve
 ## The AI coach
 
 The coach runs **on your device** using Apple Intelligence. What you tell it, and the plans it writes, are not sent to the developer or any third-party AI service.
+
+## Camera and photos
+
+If you choose to scan your gym or show the coach a photo, FORGE uses the camera, or a photo you pick from your library, to recognise gym equipment. The photo is read **on your device** by Apple Intelligence and then discarded: FORGE doesn't save it, sync it or send it anywhere. Only the equipment list you confirm is kept, as part of your gym profile. FORGE only sees the photos you pick, never the rest of your library.
 
 ## Crews (beta, optional)
 

@@ -28,7 +28,8 @@ sets a weight target for every lift, and saves every workout to Apple Health.
 - **AI coach, on device.** Picks today's session from muscle readiness, your split and training days, using Apple Intelligence on your iPhone. A built-in coach takes over when Apple Intelligence is off.
 - **Learns your limits.** Tell it about an injury or a lift you can't do yet, and it plans around it.
 - **Equipment-aware.** Gym profiles for home, commercial and travel gyms. The coach only programs what that gym has.
-- **Finds your weights.** Test sets find a starting weight for each lift, then progressive overload moves it up as you get stronger.
+- **Finds your weights.** No test sets: every set counts. A new lift starts from your other lifts for the same muscle, your first set fine-tunes it, and progressive overload moves it up from there.
+- **Scan your gym.** Snap a few photos and the coach lists the equipment it sees. Photos never leave your iPhone.
 - **Plans the week.** Every training day gets a plan, and you can move, shorten or skip any of them.
 - **Form guides** for every exercise, with a warm-up and cool-down built into each workout.
 - **Apple Health, Apple Watch and Live Activities.** Log sets on your wrist, see the rest timer on the Lock Screen, and find every workout in Fitness.

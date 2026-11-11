@@ -21,6 +21,9 @@ Check **Settings → Health → Data Access & Devices → FORGE** and turn on Wo
 **The AI coach isn't available.**
 The coach uses Apple Intelligence. Turn it on in **Settings → Apple Intelligence & Siri**; until then a built-in coach plans your workouts.
 
+**The gym scan missed something, or found something that isn't there.**
+The scan is a starting point: check the list before saving, and add or remove equipment by hand in **Gyms**. Several photos from different angles help.
+
 **Crews won't load.**
 Crews need iCloud. Make sure you're signed in to iCloud on this iPhone.
 

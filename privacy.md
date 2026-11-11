@@ -29,7 +29,7 @@ The coach runs **on your device** using Apple Intelligence. What you tell it, an
 
 ## Camera and photos
 
-If you choose to scan your gym or show the coach a photo, FORGE uses the camera, or a photo you pick from your library, to recognise gym equipment. The photo is read **on your device** by Apple Intelligence and then discarded: FORGE doesn't save it, sync it or send it anywhere. Only the equipment list you confirm is kept, as part of your gym profile. FORGE only sees the photos you pick, never the rest of your library.
+If you choose to scan your gym or show the coach a photo, FORGE uses the camera, or a photo you pick from your library, to recognise gym equipment. The photo is read **on your device** by Apple Intelligence and then discarded: FORGE doesn't save it, sync it or send it anywhere. Only what comes out of it is kept: the equipment list you confirm, in your gym profile, and the coach's written reply in your chat. FORGE only sees the photos you pick, never the rest of your library.
 
 ## Crews (beta, optional)
 

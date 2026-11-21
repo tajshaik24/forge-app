@@ -69,7 +69,7 @@ h1, h2, h3, p { margin: 0; }
 @keyframes drift1 { to { transform: translate(140px, 70px) scale(1.15); } }
 @keyframes drift2 { to { transform: translate(-160px, -50px) scale(1.1); } }
 .hero .wrap { position: relative; z-index: 1; }
-.eyebrow { display: inline-block; font-size: 14px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--ice-text); margin-bottom: 18px; }
+.eyebrow { display: inline-block; font-size: 14px; font-weight: 700; letter-spacing: .01em; color: var(--ice-text); margin-bottom: 18px; }
 .eyebrow.v { color: var(--violet-text); }
 .hero h1 { font-size: clamp(44px, 8.4vw, 104px); line-height: .98; letter-spacing: -.035em; font-weight: 800; max-width: 11em; margin: 22px auto 24px; text-wrap: balance; }
 .hero .lede { font-size: clamp(18px, 2.1vw, 22px); color: var(--muted); max-width: 35em; margin: 0 auto 34px; text-wrap: pretty; }

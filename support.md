@@ -24,8 +24,8 @@ The coach uses Apple Intelligence. Turn it on in **Settings → Apple Intelligen
 **The gym scan missed something, or found something that isn't there.**
 The scan is a starting point: check the list before saving, and add or remove equipment by hand in **Gyms**. Several photos from different angles help.
 
-**Crews won't load.**
-Crews need iCloud. Make sure you're signed in to iCloud on this iPhone.
+**Friends won't load or an invite won't open.**
+Friends need iCloud. Make sure you're signed in to iCloud on this iPhone, and that your friend opens the link on an iPhone with FORGE installed. Each link adds one friend, so send a new link for each person.
 
 ## Privacy
 

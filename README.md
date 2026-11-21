@@ -20,7 +20,6 @@ sets a weight target for every lift, and saves every workout to Apple Health.
   <img src="images/coach.png" width="19%" alt="AI Coach chat">
   <img src="images/plan.png" width="19%" alt="Adapted plan">
   <img src="images/active-set.png" width="19%" alt="Logging a set">
-  <img src="images/crew.png" width="19%" alt="Crew streaks">
 </p>
 
 ## Highlights
@@ -33,7 +32,7 @@ sets a weight target for every lift, and saves every workout to Apple Health.
 - **Plans the week.** Every training day gets a plan, and you can move, shorten or skip any of them.
 - **Form guides** for every exercise, with a warm-up and cool-down built into each workout.
 - **Apple Health, Apple Watch and Live Activities.** Log sets on your wrist, see the rest timer on the Lock Screen, and find every workout in Fitness.
-- **Crews (beta).** Weekly streaks with friends over iCloud sharing.
+- **Friends.** Add friends with a link and keep a weekly streak together over iCloud sharing; friends only see check-ins.
 - **Private by design.** No account, no server, no ads, no tracking.
 
 <p align="center">

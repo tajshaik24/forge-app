@@ -5,13 +5,15 @@ title: Privacy Policy
 
 # FORGE Privacy Policy
 
-_Effective November 11, 2026_
+_Effective November 20, 2026_
 
 FORGE is a strength-training app for iPhone and Apple Watch. It has no account, no FORGE server, no ads, no analytics and no tracking. The developer does not collect, see or sell any of your data.
 
 ## What FORGE stores, and where
 
 - **Workouts and plans.** The sets you log, your plans, gym profiles, notes to the coach and settings are stored on your devices. If iCloud is on, they sync through **your own private iCloud account** so your iPhone, iPad and Apple Watch stay in step. Apple stores that data; the developer can't access it.
+- **Heart rate and calories stay on your device.** A workout's heart rate and active calories are kept on the device that recorded them and are never synced to iCloud. Your other devices read them back from Apple Health when they show that workout.
+- **Diagnostics.** FORGE keeps a short log of recent app events (for example "workout saved" or "Watch disconnected") on your device to help fix problems. It never leaves your device unless you choose to attach it when you send feedback, and you can see what's included first.
 - **Widgets.** Today's plan and your week streak are saved in a container shared only between FORGE and its widgets on the same device.
 
 ## Apple Health
@@ -21,7 +23,7 @@ With your permission, FORGE:
 - **reads** heart rate and active calories during a workout, and (on iPhone) last night's sleep, heart-rate variability and your step count, to show your steps and decide how hard today's workout should be;
 - **saves** your strength workouts, heart rate and active calories, so they appear in Apple Health and Fitness.
 
-Health data is used only to run your workouts and plan your training. It is never used for advertising, never sold, and never shared with anyone except as described under Crews below (which shares no Health data). You can change FORGE's Health access at any time in **Settings → Health → Data Access & Devices**.
+Health data is used only to run your workouts and plan your training. It is never used for advertising, never sold, and never shared with anyone except as described under Friends below (which shares no Health data). You can change FORGE's Health access at any time in **Settings → Health → Data Access & Devices**.
 
 ## The AI coach
 
@@ -31,15 +33,19 @@ The coach runs **on your device** using Apple Intelligence. What you tell it, an
 
 If you choose to scan your gym or show the coach a photo, FORGE uses the camera, or a photo you pick from your library, to recognise gym equipment. The photo is read **on your device** by Apple Intelligence and then discarded: FORGE doesn't save it, sync it or send it anywhere. Only what comes out of it is kept: the equipment list you confirm, in your gym profile, and the coach's written reply in your chat. FORGE only sees the photos you pick, never the rest of your library.
 
-## Crews (beta, optional)
+## Friends (optional)
 
-If you create or join a crew, FORGE shares the following with the people in that crew through Apple's iCloud sharing:
+If you add friends, FORGE shares the following with each friend through Apple's iCloud sharing:
 
 - the display name you choose, and your weekly goal;
 - one check-in per workout day: the date, the workout's focus (for example "Pull"), how many sets, how many minutes, and whether it was recorded with Apple Health;
-- nudges you send to other members.
+- nudges you send them.
 
-Crews are invite-only. Leaving a crew removes you from it; the crew's owner can end it for everyone. Crews never see your weights, notes, Health data or anything else.
+You add a friend by sending them a link; each link adds one person. Removing a friend stops sharing between the two of you. Friends never see your weights, notes, Health data or anything else. You can report a problem with a friend from the Friends screen, and you can turn Friends off in Settings.
+
+## Feedback
+
+If you send feedback from the app, it goes by email (or however you choose to share it) with your message and, only if you leave it on, an optional screenshot and the diagnostic log described above.
 
 ## Children
 

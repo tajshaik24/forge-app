@@ -37,7 +37,7 @@ h2.section { text-align: center; font-size: 28px; margin: 72px 0 0; letter-spaci
 </section>
 
 <div class="strip" aria-label="Screenshots">
-{% assign shots = "today:Today's pick,coach:Coach chat,plan:Adapted plan,active-set:Logging a set,summary:Workout summary,history:Progress,week:Your week,form-guide:Form guides,crew:Crews" | split: "," %}
+{% assign shots = "today:Today's pick,coach:Coach chat,plan:Adapted plan,active-set:Logging a set,summary:Workout summary,history:Progress,week:Your week,form-guide:Form guides" | split: "," %}
 {% for s in shots %}{% assign kv = s | split: ":" %}
   <figure class="phone">
     <div class="frame"><picture>
@@ -61,7 +61,7 @@ h2.section { text-align: center; font-size: 28px; margin: 72px 0 0; letter-spaci
     <div class="card"><h3>Scan your gym</h3><p>Snap a few photos and the coach lists the equipment it sees, for you to confirm. Photos never leave your iPhone.</p></div>
     <div class="card"><h3>Form guides</h3><p>A page for every exercise, plus a warm-up and cool-down built into each workout.</p></div>
     <div class="card"><h3>Apple Watch and Health</h3><p>Log sets on your wrist, see the rest timer on the Lock Screen, and find every workout in Fitness.</p></div>
-    <div class="card"><h3>Crews (beta)</h3><p>Weekly streaks with friends over iCloud sharing. Crews only see check-ins.</p></div>
+    <div class="card"><h3>Friends</h3><p>Add friends with a link and keep a weekly streak together over iCloud sharing. Friends only see check-ins.</p></div>
     <div class="card"><h3>Private by design</h3><p>No account, no server, no ads, no tracking. <a href="{{ '/privacy' | relative_url }}">Privacy policy</a></p></div>
   </div>
 </section>

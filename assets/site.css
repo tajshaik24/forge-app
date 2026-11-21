@@ -320,3 +320,5 @@ footer .sp { margin-right: auto; }
   .track .fill, .js .board .days i.d { transform: none !important; transition: none; }
   .btn, .tile { transition: none; }
 }
+.final p.invite { margin: 28px auto 0; font-size: 16px; overflow-wrap: anywhere; }
+.final p.invite a { color: var(--ice-text); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }

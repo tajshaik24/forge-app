@@ -11,15 +11,16 @@ sets a weight target for every lift, and saves every workout to Apple Health.
 
 **Status:** pre-alpha, in private TestFlight testing. Requires iOS 27 and watchOS 27.
 
-[Support](support.md) · [Privacy policy](privacy.md) · [Report a problem](https://github.com/tajshaik24/forge-app/issues/new)
+[Website](https://tajshaik24.github.io/forge-app/) · [Support](support.md) · [Privacy policy](privacy.md) · [Report a problem](https://github.com/tajshaik24/forge-app/issues/new)
 
 </div>
 
 <p align="center">
-  <img src="images/today.png" width="19%" alt="Today: coach pick">
-  <img src="images/coach.png" width="19%" alt="AI Coach chat">
-  <img src="images/plan.png" width="19%" alt="Adapted plan">
-  <img src="images/active-set.png" width="19%" alt="Logging a set">
+  <img src="assets/shots/today.webp" width="19%" alt="Today: coach pick">
+  <img src="assets/shots/coach.webp" width="19%" alt="AI coach chat">
+  <img src="assets/shots/workout-pr.webp" width="19%" alt="Logging a set">
+  <img src="assets/shots/guide.webp" width="19%" alt="Animated exercise guide with muscle maps">
+  <img src="assets/shots/summary.webp" width="19%" alt="Workout summary">
 </p>
 
 ## Highlights
@@ -28,18 +29,24 @@ sets a weight target for every lift, and saves every workout to Apple Health.
 - **Learns your limits.** Tell it about an injury or a lift you can't do yet, and it plans around it.
 - **Equipment-aware.** Gym profiles for home, commercial and travel gyms. The coach only programs what that gym has.
 - **Finds your weights.** No test sets: every set counts. A new lift starts from your other lifts for the same muscle, your first set fine-tunes it, and progressive overload moves it up from there.
-- **Scan your gym.** Snap a few photos and the coach lists the equipment it sees. Photos never leave your iPhone.
-- **Plans the week.** Every training day gets a plan, and you can move, shorten or skip any of them.
-- **Form guides** for every exercise, with a warm-up and cool-down built into each workout.
+- **167 animated exercises.** Every lift is a drawn figure moving through a rep, with the main muscles lit in ice blue and the helpers in violet.
+- **Weekly volume.** Sets per muscle against a 10 to 20 set growth range.
 - **Apple Health, Apple Watch and Live Activities.** Log sets on your wrist, see the rest timer on the Lock Screen, and find every workout in Fitness.
 - **Friends.** Add friends with a link and keep a weekly streak together over iCloud sharing; friends only see check-ins.
 - **Private by design.** No account, no server, no ads, no tracking.
 
-<p align="center">
-  <img src="images/form-guide.png" width="24%" alt="Form guide">
-  <img src="images/summary.png" width="24%" alt="Workout summary">
-  <img src="images/history.png" width="24%" alt="History and progress">
-  <img src="images/week.png" width="24%" alt="Week planning">
-</p>
+## This repo
 
-<p align="center"><sub>Design mockups. The app follows the same layout in light and dark mode.</sub></p>
+This is the public site for FORGE, served by GitHub Pages at <https://tajshaik24.github.io/forge-app/>. The app's source is private.
+
+| Path | What it is |
+|---|---|
+| `index.html` | The marketing page. Plain HTML with no front matter, so Jekyll copies it as is. |
+| `assets/site.css`, `assets/site.js` | Its styles and script (vanilla JS, no build step). |
+| `assets/shots/`, `assets/watch/` | App screenshots from the simulator's demo data. |
+| `assets/anim/`, `assets/muscles/` | Exercise animation strips (12 frames each) and muscle maps. |
+| `assets/og.png` | The 1200 × 630 link preview card. |
+| `privacy.md`, `support.md` | The pages App Store Connect links to, rendered through `_layouts/default.html`. |
+| `invite.html` | The landing page for friend-invite links. |
+
+To preview the marketing page, run `python3 -m http.server` here and open <http://localhost:8000/>. The Markdown pages need Jekyll (`bundle exec jekyll serve` with the `github-pages` gem) to render.

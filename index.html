@@ -1,67 +1,415 @@
----
-layout: default
-landing: true
----
-<style>
-.hero { text-align: center; padding: 64px 0 8px; }
-.hero h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.05; letter-spacing: -0.02em; margin: 0 auto 16px; max-width: 14em; font-weight: 800; }
-.hero p { color: var(--muted); font-size: clamp(17px, 2.2vw, 20px); max-width: 34em; margin: 0 auto; }
-.pill { display: inline-block; background: var(--wash); color: var(--accent-text); font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; margin-bottom: 20px; }
-.req { margin-top: 14px; font-size: 14px !important; }
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FORGE: the strength coach that adapts to you</title>
+<meta name="description" content="An adaptive strength coach for iPhone and Apple Watch. An on-device AI coach plans every session, 167 animated exercises show the exact muscles at work, and your data stays yours.">
+<meta name="theme-color" content="#0E1216">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://tajshaik24.github.io/forge-app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FORGE">
+<meta property="og:title" content="FORGE: the strength coach that adapts to you">
+<meta property="og:description" content="An on-device AI coach for iPhone and Apple Watch. 167 animated exercises, the exact muscles lit, and nothing sent to a server.">
+<meta property="og:url" content="https://tajshaik24.github.io/forge-app/">
+<meta property="og:image" content="https://tajshaik24.github.io/forge-app/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="FORGE, an adaptive strength coach for iPhone and Apple Watch">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FORGE: the strength coach that adapts to you">
+<meta name="twitter:description" content="An on-device AI coach for iPhone and Apple Watch. 167 animated exercises, the exact muscles lit, and nothing sent to a server.">
+<meta name="twitter:image" content="https://tajshaik24.github.io/forge-app/assets/og.png">
+<link rel="icon" href="images/icon.png">
+<link rel="apple-touch-icon" href="images/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="preload" as="image" href="assets/shots/workout-pr.webp" type="image/webp">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
 
-/* Phones */
-.strip { display: flex; gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 40px 20px 28px; margin: 0 auto; max-width: 1240px; scrollbar-width: none; }
-.strip::-webkit-scrollbar { display: none; }
-@media (min-width: 1240px) { .strip { justify-content: center; } }
-figure.phone { margin: 0; flex: 0 0 auto; width: 200px; scroll-snap-align: start; scroll-margin-left: 20px; text-align: center; }
-.frame { background: var(--bezel); padding: 7px; border-radius: 36px; overflow: hidden; box-shadow: 0 18px 40px -18px rgba(0,0,0,.35); }
-.frame picture { display: block; }
-.frame img { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: 585 / 1266; object-fit: cover; object-position: top; border-radius: 29px; }
-figure.phone figcaption { font-size: 14px; color: var(--muted); margin-top: 12px; }
-.hint { text-align: center; color: var(--muted); font-size: 13px; margin: 0; }
-@media (min-width: 1240px) { .hint { display: none; } }
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="FORGE home"><img src="images/icon.png" alt="" width="30" height="30">FORGE</a>
+    <nav aria-label="Sections">
+      <a href="#exercises">Exercises</a>
+      <a href="#coach">Coach</a>
+      <a href="#workout">Workout</a>
+      <a href="#watch">Watch</a>
+      <a href="#friends">Friends</a>
+      <a href="#privacy">Privacy</a>
+    </nav>
+    <span class="pill"><i></i>Private beta</span>
+  </div>
+</header>
 
-/* Features */
-.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 48px; }
-.card { background: var(--surface); border: 1px solid var(--hairline); border-radius: 20px; padding: 20px 22px; }
-.card h3 { margin: 0 0 6px; font-size: 17px; }
-.card p { margin: 0; color: var(--muted); font-size: 15px; }
-h2.section { text-align: center; font-size: 28px; margin: 72px 0 0; letter-spacing: -0.01em; }
-</style>
+<main id="main">
 
-<section class="wrap hero">
-  <span class="pill">Pre-alpha · TestFlight</span>
-  <h1>A strength coach that plans around you.</h1>
-  <p>FORGE plans each session from your recovery, schedule, equipment and feedback, sets a weight for every lift, and saves every workout to Apple Health.</p>
-  <p class="req">For iPhone and Apple Watch · iOS 27 and watchOS 27</p>
-</section>
-
-<div class="strip" aria-label="Screenshots">
-{% assign shots = "today:Today's pick,coach:Coach chat,plan:Adapted plan,active-set:Logging a set,summary:Workout summary,history:Progress,week:Your week,form-guide:Form guides" | split: "," %}
-{% for s in shots %}{% assign kv = s | split: ":" %}
-  <figure class="phone">
-    <div class="frame"><picture>
-      <source media="(prefers-color-scheme: dark)" srcset="{{ '/images/' | append: kv[0] | append: '-dark.png' | relative_url }}">
-      <img src="{{ '/images/' | append: kv[0] | append: '.png' | relative_url }}" alt="{{ kv[1] }}" loading="lazy" width="585" height="1266">
-    </picture></div>
-    <figcaption>{{ kv[1] }}</figcaption>
-  </figure>
-{% endfor %}
-</div>
-<p class="hint">Swipe for more screens →</p>
-
-<section class="wrap">
-  <h2 class="section">What it does</h2>
-  <div class="features">
-    <div class="card"><h3>AI coach, on device</h3><p>Picks today's session from muscle readiness, your split and training days, using Apple Intelligence on your iPhone. A built-in coach takes over when it's off.</p></div>
-    <div class="card"><h3>Learns your limits</h3><p>Tell it about an injury or a lift you can't do yet, and it plans around it.</p></div>
-    <div class="card"><h3>Equipment-aware</h3><p>Gym profiles for home, commercial and travel. The coach only programs what that gym has.</p></div>
-    <div class="card"><h3>Finds your weights</h3><p>No test sets: every set counts. A new lift starts from your other lifts for the same muscle, your first set fine-tunes it, and progressive overload moves it up from there.</p></div>
-    <div class="card"><h3>Plans the week</h3><p>Every training day gets a plan that fits your session length. Move, shorten or skip any of them. Every 4th week is a lighter deload week.</p></div>
-    <div class="card"><h3>Scan your gym</h3><p>Snap a few photos and the coach lists the equipment it sees, for you to confirm. Photos never leave your iPhone.</p></div>
-    <div class="card"><h3>Form guides</h3><p>A page for every exercise, plus a warm-up and cool-down built into each workout.</p></div>
-    <div class="card"><h3>Apple Watch and Health</h3><p>Log sets on your wrist, see the rest timer on the Lock Screen, and find every workout in Fitness.</p></div>
-    <div class="card"><h3>Friends</h3><p>Add friends with a link and keep a weekly streak together over iCloud sharing. Friends only see check-ins.</p></div>
-    <div class="card"><h3>Private by design</h3><p>No account, no server, no ads, no tracking. <a href="{{ '/privacy' | relative_url }}">Privacy policy</a></p></div>
+<!-- Hero -->
+<section class="hero" id="top" data-pause>
+  <div class="aurora" aria-hidden="true"><b></b><b></b><b></b></div>
+  <div class="wrap">
+    <span class="eyebrow">iPhone + Apple Watch</span>
+    <h1>The strength coach that <span class="grad">adapts to you.</span></h1>
+    <p class="lede">FORGE plans every session from your recovery, schedule, equipment and feedback, then picks a weight for every lift. The coach runs on your iPhone, so nothing is sent to a server.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="#exercises">See it move</a>
+      <a class="btn ghost" href="#get">Private beta on TestFlight</a>
+    </div>
+    <p class="fine">Coming to the App Store · iOS 27 and watchOS 27</p>
+  </div>
+  <div class="stage">
+    <div class="slot p-l" data-speed="-.06"><div class="phone"><img src="assets/shots/today.webp" width="603" height="1311" alt="Today screen: the coach's pick is a Push day with warm-up and four lifts, with a running workout minimized to a bar."></div></div>
+    <div class="slot p-c" data-speed=".03"><div class="phone"><img src="assets/shots/workout-pr.webp" width="603" height="1311" fetchpriority="high" alt="Workout screen: barbell bench press with a new best on set two and set three ready to log."></div></div>
+    <div class="slot p-r" data-speed="-.06"><div class="phone violet"><img src="assets/shots/guide.webp" width="603" height="1311" alt="Exercise guide: an animated barbell bench press above front and back muscle maps."></div></div>
+    <div class="slot p-w" data-speed="-.14"><div class="watch"><img src="assets/watch/rest.webp" width="416" height="496" alt="Apple Watch rest timer with minus 30, Skip and plus 30 buttons."></div></div>
   </div>
 </section>
+
+<!-- Wall of lifts -->
+<section class="sec wall-sec" id="exercises" data-pause>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The library</span>
+      <h2>167 exercises. <span class="grad">Every one moves.</span></h2>
+      <p>Each lift is a drawn figure with a full rep at a real lifting tempo, so you see how it should look before you touch the bar.</p>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><b class="grad">167</b><span>animated exercises</span></div>
+      <div class="stat"><b class="grad">12</b><span>frames in every rep</span></div>
+      <div class="stat"><b class="grad">2</b><span>colours: main muscles and helpers</span></div>
+    </div>
+  </div>
+  <div class="wall" id="wall" role="img" aria-label="A moving wall of animated exercises, including bench press, squat, pull-up and deadlift."></div>
+</section>
+
+<!-- Anatomy -->
+<section class="sec" id="anatomy" data-pause>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow v">Muscle maps</span>
+      <h2>See exactly <span class="grad">what's working.</span></h2>
+      <p>The muscles that do the work light up in ice blue. The ones that help glow violet. Front and back, on every exercise.</p>
+    </div>
+    <div class="lifts reveal" role="group" aria-label="Pick a lift">
+      <button class="chip" data-lift="barbell-bench-press" aria-pressed="true">Bench press</button>
+      <button class="chip" data-lift="back-squat" aria-pressed="false">Back squat</button>
+      <button class="chip" data-lift="pull-up" aria-pressed="false">Pull-up</button>
+      <button class="chip" data-lift="barbell-deadlift" aria-pressed="false">Deadlift</button>
+      <button class="chip" data-lift="standing-barbell-overhead-press" aria-pressed="false">Overhead press</button>
+      <button class="chip" data-lift="barbell-row" aria-pressed="false">Barbell row</button>
+      <button class="chip" data-lift="barbell-hip-thrust" aria-pressed="false">Hip thrust</button>
+      <button class="chip" data-lift="dumbbell-curl" aria-pressed="false">Dumbbell curl</button>
+    </div>
+    <div class="anatomy">
+      <div class="panel lift-view reveal">
+        <div class="screenbox"><div class="mv solo" id="lift-mv" role="img" aria-label="Barbell bench press, animated" style="background-image:url(assets/anim/barbell-bench-press.webp)"></div></div>
+        <h3 id="lift-name" aria-live="polite">Barbell bench press</h3>
+        <div class="legend">
+          <span><i class="dot"></i><b>Main</b> · <span id="lift-main">Chest, upper and lower</span></span>
+          <span><i class="dot v"></i><b>Helpers</b> · <span id="lift-help">Front delts, triceps</span></span>
+        </div>
+      </div>
+      <div class="panel map-view reveal" style="--d:.12s">
+        <img id="lift-map" src="assets/muscles/barbell-bench-press.webp" width="581" height="640" loading="lazy" alt="Barbell bench press muscle map, front and back: chest in ice blue; front delts and triceps in violet.">
+        <div class="sides" aria-hidden="true"><span>Front</span><span>Back</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="glow-line"></div></div>
+
+<!-- Coach -->
+<section class="sec" id="coach">
+  <div class="wrap split">
+    <div class="copy reveal">
+      <span class="eyebrow">The coach</span>
+      <h2>An AI coach that <span class="grad">never leaves your iPhone.</span></h2>
+      <p>Built on Apple Intelligence and run entirely on device. Tell it what's going on, in your own words, and today's plan changes to match.</p>
+      <ul class="ticks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>A new plan every day</b>Built from how recovered each muscle is, your schedule, the equipment at your gym and how the last session felt.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>The rules pick the weights</b>Every number comes from your own training history. The model only puts it into words.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>It remembers what you tell it</b>Can't do a pull-up yet? It saves the note, plans around it and offers to build you up to one, step by step.</span></li>
+      </ul>
+      <div class="quotes" role="group" aria-label="Things you can say to the coach">
+        <span>Only 30 min today</span><span>I'm at a hotel gym</span><span>I can't do a pull-up yet</span>
+      </div>
+    </div>
+    <div class="duo reveal" style="--d:.1s">
+      <div class="phone" data-speed="-.04"><img src="assets/shots/coach.webp" width="603" height="1311" loading="lazy" alt="Coach chat: after 'I can't do a pull up or a chin up yet', the coach saves a note and offers to build up to a pull-up through inverted rows, band-assisted and negative pull-ups."></div>
+      <div class="phone violet" data-speed=".05"><img src="assets/shots/week.webp" width="603" height="1311" loading="lazy" alt="Your week: training days, a split chosen by the coach and each day's planned workout."></div>
+    </div>
+  </div>
+</section>
+
+<!-- Workout flow -->
+<section class="sec" id="workout" data-pause>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The workout</span>
+      <h2>Built for the <span class="grad">middle of a set.</span></h2>
+      <p>Big targets, one tap to log, and no forms to fill in while you catch your breath.</p>
+    </div>
+    <div class="flow">
+      <div class="flow-stick" aria-hidden="true">
+        <div class="phone"><div class="stack">
+          <img class="on" src="assets/shots/warmup.webp" width="603" height="1311" loading="lazy" alt="">
+          <img src="assets/shots/workout.webp" width="603" height="1311" loading="lazy" alt="">
+          <img src="assets/shots/keypad.webp" width="603" height="1311" loading="lazy" alt="">
+          <img src="assets/shots/rest.webp" width="603" height="1311" loading="lazy" alt="">
+          <img src="assets/shots/rate.webp" width="603" height="1311" loading="lazy" alt="">
+          <img src="assets/shots/today.webp" width="603" height="1311" loading="lazy" alt="">
+          <img src="assets/shots/summary.webp" width="603" height="1311" loading="lazy" alt="">
+        </div></div>
+      </div>
+      <div class="steps">
+        <article class="step on">
+          <span class="n">01</span>
+          <h3>Start warm.</h3>
+          <p>A short warm-up is built into every workout, and heavy lifts get lighter ramp-up sets you can edit. Or skip straight to lifting.</p>
+          <div class="phone"><img src="assets/shots/warmup.webp" width="603" height="1311" loading="lazy" alt="Workout screen showing a three-step warm-up and warm-up sets for barbell bench press."></div>
+        </article>
+        <article class="step">
+          <span class="n">02</span>
+          <h3>Tap the ring. Set logged.</h3>
+          <p>Your target weight and reps are already filled in. Tap a set's ring to log it, and tap again to undo.</p>
+          <div class="phone"><img src="assets/shots/workout.webp" width="603" height="1311" loading="lazy" alt="Workout screen: overhead press with set one logged and set two ready, with a Log set button."></div>
+        </article>
+        <article class="step">
+          <span class="n">03</span>
+          <h3>A keypad made for plates.</h3>
+          <p>Change the weight with quick steps instead of typing it out.</p>
+          <div class="keys" aria-hidden="true"><span class="key">−5</span><span class="key">−2.5</span><span class="key">+2.5</span><span class="key">+5</span></div>
+          <div class="phone"><img src="assets/shots/keypad.webp" width="603" height="1311" loading="lazy" alt="Weight keypad with minus 5, minus 2.5, plus 2.5 and plus 5 buttons above the number keys."></div>
+        </article>
+        <article class="step">
+          <span class="n">04</span>
+          <h3>Rest on your terms.</h3>
+          <p>The rest timer starts itself and shows what's next. Take 30 seconds off, add 30, or skip it.</p>
+          <div class="keys" aria-hidden="true"><span class="key">−30</span><span class="key ice">Skip rest</span><span class="key">+30</span></div>
+          <div class="phone"><img src="assets/shots/rest.webp" width="603" height="1311" loading="lazy" alt="Rest timer at 1:29 with minus 30, plus 30 and Skip rest, and the next set shown."></div>
+        </article>
+        <article class="step">
+          <span class="n">05</span>
+          <h3>Rate each lift once.</h3>
+          <p>One tap after the last set. That answer sets the weights for your next session.</p>
+          <div class="keys" aria-hidden="true"><span class="key">Too easy</span><span class="key ice">Just right</span><span class="key">Too hard</span></div>
+          <div class="phone"><img src="assets/shots/rate.webp" width="603" height="1311" loading="lazy" alt="After the last set: 'How did overhead press go?' with Too easy, Just right and Too hard."></div>
+        </article>
+        <article class="step">
+          <span class="n">06</span>
+          <h3>Tuck it away.</h3>
+          <p>Minimize the workout to a bar and look around the app. It keeps running, one tap away.</p>
+          <div class="phone"><img src="assets/shots/today.webp" width="603" height="1311" loading="lazy" alt="Today screen with the running Push workout minimized to a bar above the tab bar."></div>
+        </article>
+        <article class="step">
+          <span class="n">07</span>
+          <h3>Finish strong.</h3>
+          <p>Finish for a summary with your personal bests, volume and heart rate. Changed your mind? Discard the workout and nothing is saved.</p>
+          <div class="phone"><img src="assets/shots/summary.webp" width="603" height="1311" loading="lazy" alt="Workout summary: five new personal bests, 43 minutes, 14 sets and 8.1k pounds of volume."></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="glow-line"></div></div>
+
+<!-- Lock Screen & Watch -->
+<section class="sec" id="watch" data-pause>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow v">Lock Screen + Apple Watch</span>
+      <h2>Leave your phone <span class="grad">in your pocket.</span></h2>
+      <p>Your rest timer lives on the Lock Screen and in the Dynamic Island. Your Watch can run the whole workout.</p>
+    </div>
+    <div class="devices">
+      <div class="reveal">
+        <div class="phone lock" role="img" aria-label="Illustration of an iPhone Lock Screen: a rest timer in the Dynamic Island, a Live Activity counting down the rest, and a rest alert with plus 30 seconds, Skip and Log set buttons.">
+          <div class="screen" aria-hidden="true">
+            <div class="island"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9.5 2.5h5"/></svg><span data-rest>0:00</span></div>
+            <div class="date">Friday, November 20</div>
+            <div class="time">9:41</div>
+            <div class="la note" id="rest-note">
+              <div class="top"><img src="images/icon.png" alt="" width="28" height="28">FORGE<em>now</em></div>
+              <p><b>Rest is over</b>Barbell bench press · set 2 of 3</p>
+              <div class="acts"><span id="rest-add">+30 s</span><span>Skip</span><span>Log set</span></div>
+            </div>
+            <div class="la live">
+              <div class="top"><img src="images/icon.png" alt="" width="28" height="28">REST</div>
+              <div class="big"><b data-rest>0:00</b><span>Barbell bench press<br>Set 2 of 3</span></div>
+              <div class="bar"><i id="rest-bar"></i></div>
+            </div>
+          </div>
+        </div>
+        <p class="illus">Lock Screen shown as an illustration</p>
+      </div>
+      <div class="dev-copy reveal" style="--d:.1s">
+        <h3>A workout computer on your wrist.</h3>
+        <p>Apple Watch runs the workout with HealthKit, logs your sets and taps your wrist when rest is over. Phone and Watch stay in step the whole time.</p>
+        <div class="watches">
+          <figure><div class="watch"><img src="assets/watch/home.webp" width="416" height="496" loading="lazy" alt="Watch home: today's Push workout with a Start button and step count."></div><figcaption>Start from your wrist</figcaption></figure>
+          <figure><div class="watch"><img src="assets/watch/rest.webp" width="416" height="496" loading="lazy" alt="Watch rest timer at 1:07 with heart rate and the next set."></div><figcaption>Rest with haptics</figcaption></figure>
+          <figure><div class="watch"><img src="assets/watch/add.webp" width="416" height="496" loading="lazy" alt="Watch Add exercise screen with recommended lifts for a push day."></div><figcaption>Add a lift, with picks</figcaption></figure>
+          <figure><div class="watch"><img src="assets/watch/summary.webp" width="416" height="496" loading="lazy" alt="Watch summary: time, sets, weight lifted, heart rate and calories."></div><figcaption>Saved to Health</figcaption></figure>
+        </div>
+        <div class="mini-grid">
+          <div><b>Live Activity</b>The rest countdown on your Lock Screen and in the Dynamic Island.</div>
+          <div><b>Alerts you can act on</b>Add 30 seconds, skip, or log the set, right from the alert.</div>
+          <div><b>Rest haptics</b>A tap on the wrist when it's time to lift again.</div>
+          <div><b>Always in sync</b>Log on either device and the other one follows.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Weekly volume -->
+<section class="sec" id="volume">
+  <div class="wrap split flip">
+    <div class="copy reveal">
+      <span class="eyebrow">Weekly volume</span>
+      <h2>Know if you're doing <span class="grad">enough to grow.</span></h2>
+      <p>FORGE counts your working sets for every muscle and sets them against a growth range of 10 to 20 sets a week. A muscle only says “Growing” when your strength is actually going up.</p>
+      <div class="panel vol reveal" role="img" aria-label="Example weekly volume chart. Chest 8 sets, Back 12 sets and growing, Shoulders 14 sets and growing, Biceps 6 sets, Triceps 5 and a half sets, against a 10 to 20 set growth range.">
+        <div class="vol-row"><b>Chest</b><div class="track"><i class="range"></i><i class="fill" style="--v:33.3%"></i></div><span class="tag">8 sets · 2 to the growth range</span></div>
+        <div class="vol-row"><b>Back</b><div class="track"><i class="range"></i><i class="fill" style="--v:50%;--d:.1s"></i></div><span class="tag g">12 sets · Growing · strength +16%</span></div>
+        <div class="vol-row"><b>Shoulders</b><div class="track"><i class="range"></i><i class="fill" style="--v:58.3%;--d:.2s"></i></div><span class="tag g">14 sets · Growing · strength +26%</span></div>
+        <div class="vol-row"><b>Biceps</b><div class="track"><i class="range"></i><i class="fill" style="--v:25%;--d:.3s"></i></div><span class="tag">6 sets · 4 to the growth range</span></div>
+        <div class="vol-row"><b>Triceps</b><div class="track"><i class="range"></i><i class="fill" style="--v:22.9%;--d:.4s"></i></div><span class="tag">5½ sets · helper muscles count half</span></div>
+        <div class="axis" aria-hidden="true"><i></i><div><span style="left:0;transform:none">0</span><span style="left:41.66%">10</span><span style="left:83.33%">20</span></div></div>
+      </div>
+    </div>
+    <div class="solo-phone reveal" style="--d:.1s">
+      <div class="phone" data-speed="-.04" style="--w:clamp(240px,26vw,310px)"><img src="assets/shots/volume.webp" width="603" height="1311" loading="lazy" alt="Weekly volume screen: sets per muscle over the last 7 days against a 10 to 20 set range, with Back and Shoulders marked Growing."></div>
+    </div>
+  </div>
+</section>
+
+<!-- Friends -->
+<section class="sec" id="friends">
+  <div class="wrap split">
+    <div class="copy reveal">
+      <span class="eyebrow v">Friends</span>
+      <h2>Show up <span class="grad">for each other.</span></h2>
+      <p>Add a friend with one link and see each other's week. Hit your training days together and your shared streak grows.</p>
+      <ul class="ticks v">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>One link, one friend</b>Send it, they open it in FORGE, and you both see each other's week.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Nudges and a streak together</b>Give a friend a nudge when they're falling behind. Rest days never break the streak.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Check-ins only</b>Friends see the workout type, sets and minutes. Never your weights, and never your Health data.</span></li>
+      </ul>
+      <div class="panel board reveal" aria-hidden="true">
+        <div class="streak"><b class="grad">3</b><span><b>Your streak together</b>Weeks in a row everyone hit their days</span></div>
+        <div class="friend"><span class="av">T</span><span>You<small>2 of 4 days</small></span><span class="days"><i></i><i class="d" style="--d:.1s"></i><i></i><i class="d" style="--d:.2s"></i><i></i><i></i><i></i></span></div>
+        <div class="friend"><span class="av">M</span><span>Maya<small>Week done</small></span><span class="days"><i class="d" style="--d:.3s"></i><i class="d" style="--d:.4s"></i><i class="d" style="--d:.5s"></i><i></i><i></i><i></i><i></i></span></div>
+        <div class="friend"><span class="av">S</span><span>Sam<small>1 of 2 days</small></span><span class="days"><i></i><i></i><i></i><i></i><i class="d" style="--d:.6s"></i><i></i><i></i></span></div>
+      </div>
+    </div>
+    <div class="duo v reveal" style="--d:.1s">
+      <div class="phone violet" data-speed="-.04"><img src="assets/shots/friends.webp" width="603" height="1311" loading="lazy" alt="Friends screen: a three-week streak together and each friend's training days this week, with Nudge buttons."></div>
+      <div class="phone" data-speed=".05"><img src="assets/shots/invite.webp" width="603" height="1311" loading="lazy" alt="Invite a friend sheet with Send link and Copy link."></div>
+    </div>
+  </div>
+</section>
+
+<!-- System integration -->
+<section class="sec" id="system">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Everywhere on iPhone</span>
+      <h2>Part of the system, <span class="grad">not just an app.</span></h2>
+      <p>Start a workout, log a set or add rest without opening FORGE.</p>
+    </div>
+    <div class="bento">
+      <div class="panel tile w4 reveal">
+        <div class="search-demo" aria-hidden="true">
+          <div class="search-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><span id="q">rdl</span><i class="caret"></i></div>
+          <ul class="results" id="q-results"><li>Barbell Romanian deadlift</li></ul>
+        </div>
+        <h3>Search that speaks gym</h3>
+        <p>Type it the way you'd say it. “rdl” and “incline bench press (barbell)” both find the right lift.</p>
+      </div>
+      <div class="panel tile v reveal" style="--d:.08s">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0013 0M12 17.5V21"/></svg></div>
+        <h3>Siri and Shortcuts</h3>
+        <p>Start today's workout, log a set or add 30 seconds with your voice or the Action button.</p>
+      </div>
+      <div class="panel tile reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="10" rx="5"/><circle cx="16" cy="12" r="2.4"/></svg></div>
+        <h3>Control Center</h3>
+        <p>Controls for starting a workout, logging a set and adding rest.</p>
+      </div>
+      <div class="panel tile v reveal" style="--d:.08s">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="2.5"/><rect x="13" y="3" width="8" height="8" rx="2.5"/><rect x="3" y="13" width="18" height="8" rx="2.5"/></svg></div>
+        <h3>Widgets and Smart Stack</h3>
+        <p>Today's workout and your week streak on the Home Screen, Lock Screen and Watch.</p>
+      </div>
+      <div class="panel tile reveal" style="--d:.16s">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5M11 8v6M8 11h6"/></svg></div>
+        <h3>Spotlight</h3>
+        <p>Find FORGE from system search, right where you look for everything else.</p>
+      </div>
+      <div class="panel tile w3 v reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div>
+        <h3>Apple Health</h3>
+        <p>Every workout is saved to Health once, with heart rate and calories, and shows up in Fitness.</p>
+      </div>
+      <div class="panel tile w3 reveal" style="--d:.08s">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h18M6 8v8M18 8v8M9 6v12M15 6v12"/></svg></div>
+        <h3>Knows your gym</h3>
+        <p>Set up home, commercial and travel gyms. The coach only programs what that gym has.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Privacy -->
+<section class="sec privacy" id="privacy">
+  <div class="wrap">
+    <span class="eyebrow v reveal">Privacy</span>
+    <h2 class="reveal">Your training is <span class="grad">nobody's business.</span></h2>
+    <div class="nos">
+      <div class="panel no reveal"><b>No account</b><p>Open the app and train. There's nothing to sign up for.</p></div>
+      <div class="panel no reveal" style="--d:.07s"><b>No ads, no analytics</b><p>No tracking of any kind. The developer never sees your data.</p></div>
+      <div class="panel no reveal" style="--d:.14s"><b>Your own iCloud</b><p>Workouts and plans sync through your private iCloud. Heart rate and calories stay on the device.</p></div>
+      <div class="panel no reveal" style="--d:.21s"><b>An on-device coach</b><p>The AI runs on your iPhone with Apple Intelligence. Nothing is sent to a server.</p></div>
+    </div>
+    <a class="more reveal" href="privacy">Read the privacy policy</a>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final" id="get" data-pause>
+  <div class="aurora" aria-hidden="true"><b></b><b></b></div>
+  <div class="wrap">
+    <img class="appicon reveal" src="images/icon.png" width="112" height="112" alt="FORGE app icon">
+    <h2 class="reveal">Get stronger, <span class="grad">on your terms.</span></h2>
+    <p class="reveal">FORGE is in private beta on TestFlight and coming to the App Store for iPhone and Apple Watch.</p>
+    <div class="cta-row reveal">
+      <span class="pill big"><i></i>Private beta on TestFlight</span>
+      <a class="btn ghost" href="support">Get help or send feedback</a>
+    </div>
+    <p class="fine reveal">Requires iOS 27 and watchOS 27</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="sp">FORGE · An adaptive strength coach for iPhone and Apple Watch</span>
+    <a href="support">Support</a>
+    <a href="privacy">Privacy</a>
+    <a href="https://github.com/tajshaik24/forge-app/issues/new">Report a problem</a>
+  </div>
+</footer>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>

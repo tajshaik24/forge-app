@@ -166,3 +166,13 @@
     }
   }
 })();
+
+// "Request an invite": the address is put together only when tapped, so it never sits in the page
+// for scrapers. Without JavaScript the button goes to the support page instead.
+document.querySelectorAll('[data-invite]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var parts = ['moc.liamg', '@', 'egrof+42kiahsjat'].map(function (p) { return p.split('').reverse().join(''); }).reverse();
+    window.location.href = 'mai' + 'lto:' + parts.join('') + '?subject=' + encodeURIComponent('FORGE beta invite');
+  });
+});

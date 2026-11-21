@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>You're invited to FORGE</title>
+<meta name="description" content="Open this on your iPhone to add each other as friends on FORGE and keep a weekly streak together.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FORGE">
+<meta property="og:title" content="You're invited to train together on FORGE">
+<meta property="og:description" content="Open on your iPhone to add each other as friends and keep a weekly streak together.">
+<meta property="og:image" content="https://tajshaik24.github.io/forge-app/images/invite-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://tajshaik24.github.io/forge-app/invite.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0E1216">
+<meta name="robots" content="noindex">
+<link rel="icon" href="images/icon.png">
+<link rel="apple-touch-icon" href="images/icon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700;800&display=swap">
+<style>
+  :root { --ground:#0E1216; --surface:#171C22; --raised:#222830; --hair:#2A313A; --ink:#F1F5F8; --muted:#97A3AE; --accent:#3FB6E8; --on-accent:#04131B; color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--ground); color: var(--ink); }
+  body { font: 17px/1.5 "Hanken Grotesk", -apple-system, system-ui, sans-serif; min-height: 100svh; display: flex;
+         padding: max(24px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left)); }
+  main { margin: auto; width: 100%; max-width: 440px; display: grid; gap: 22px; text-align: center; }
+  .icon { width: 96px; height: 96px; border-radius: 22px; margin: 0 auto; display: block; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+  .eyebrow { color: var(--muted); font-weight: 500; margin: 0; }
+  h1 { font-size: 34px; line-height: 1.1; font-weight: 800; margin: 4px 0 0; letter-spacing: -0.01em; text-wrap: balance; }
+  h1 em { font-style: normal; color: var(--accent); }
+  .card { background: var(--surface); border: 1px solid var(--hair); border-radius: 20px; padding: 16px 18px; text-align: left; display: grid; gap: 10px; }
+  .row { display: flex; gap: 12px; align-items: flex-start; color: var(--muted); font-size: 15px; }
+  .dot { flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--raised); color: var(--accent); display: grid; place-items: center; font-weight: 700; font-size: 13px; }
+  .open { display: block; background: var(--accent); color: var(--on-accent); text-decoration: none; font-weight: 800; font-size: 18px;
+          padding: 17px; border-radius: 999px; -webkit-tap-highlight-color: transparent; }
+  .open:active { filter: brightness(.85); }
+  .small { color: var(--muted); font-size: 14px; margin: 0; }
+  .small a { color: var(--accent); }
+  .error { display: none; }
+  .bad .ok { display: none; } .bad .error { display: block; }
+</style>
+</head>
+<body>
+<main id="main">
+  <img class="icon" src="images/icon.png" alt="FORGE">
+  <div class="ok">
+    <p class="eyebrow" id="who">You've been invited</p>
+    <h1>Train together on <em>FORGE</em></h1>
+  </div>
+  <div class="error">
+    <h1>This invite link isn't complete</h1>
+    <p class="small">Ask your friend to send it again from the Friends tab in FORGE.</p>
+  </div>
+  <div class="card ok">
+    <div class="row"><span class="dot">1</span><span>You'll both see each other's week: who trained, the workout, sets and minutes. Never weights, Health data or notes.</span></div>
+    <div class="row"><span class="dot">2</span><span>Keep a streak together and nudge each other on training days.</span></div>
+  </div>
+  <a class="open ok" id="open" href="#">Open in FORGE</a>
+  <p class="small ok">Don't have FORGE yet? It's in private testing on TestFlight: ask the friend who sent this to add you, install it, then come back and tap Open.</p>
+  <p class="small"><a href="./">About FORGE</a> · <a href="privacy.html">Privacy</a></p>
+</main>
+<script>
+  // The invite rides in the fragment (#s=…&n=…), which browsers never send to the server.
+  (function () {
+    var params = new URLSearchParams(location.hash.replace(/^#/, ''));
+    var s = params.get('s');
+    var n = params.get('n');
+    if (!s || !/^[A-Za-z0-9_-]+$/.test(s)) { document.getElementById('main').classList.add('bad'); return; }
+    if (n) {
+      var name = n.replace(/[\u0000-\u001f]/g, '').slice(0, 30);
+      document.getElementById('who').textContent = name + ' invited you';
+      document.title = name + ' invited you to FORGE';
+    }
+    var deep = 'forge://invite?s=' + s + (n ? '&n=' + encodeURIComponent(n) : '');
+    document.getElementById('open').href = deep;
+  })();
+</script>
+</body>
+</html>

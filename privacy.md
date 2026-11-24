@@ -41,7 +41,9 @@ If you add friends, FORGE shares the following with each friend through Apple's 
 - one check-in per workout day: the date, the workout's focus (for example "Pull"), how many sets, how many minutes, and whether it was recorded with Apple Health;
 - nudges you send them.
 
-You add a friend by sending them a link; each link adds one person. Removing a friend stops sharing between the two of you. Friends never see your weights, notes, Health data or anything else. You can report a problem with a friend from the Friends screen, and you can turn Friends off in Settings.
+You add a friend by sending them a link, meant for one person. When someone opens a friend's link, FORGE asks first and shares nothing until they tap Join. Removing a friend, or leaving a friendship, stops sharing between the two of you and deletes your profile, check-ins and nudges from the space you shared. Check-ins older than about four months are deleted automatically. Invite links are kept in the iOS Keychain on your iPhone.
+
+Friends never see your weights, notes, Health data or anything else. You can report a problem with a friend from the Friends screen, and you can turn Friends off in Settings.
 
 ## Feedback
 

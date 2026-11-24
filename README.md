@@ -11,7 +11,7 @@ sets a weight target for every lift, and saves every workout to Apple Health.
 
 **Status:** pre-alpha, in private TestFlight testing. Requires iOS 27 and watchOS 27.
 
-[Website](https://tajshaik24.github.io/forge-app/) · [Support](support.md) · [Privacy policy](privacy.md) · [Report a problem](https://github.com/tajshaik24/forge-app/issues/new)
+[Website](https://tajshaik24.github.io/forge-app/) / [Support](support.md) / [Privacy policy](privacy.md) / [Report a problem](https://github.com/tajshaik24/forge-app/issues/new)
 
 </div>
 

@@ -386,9 +386,9 @@ footer .sp { margin-right: auto; }
   .js .dstage .f-flat { --w: min(300px, calc((100vh - 150px) * .55)); }
   .js .dstage .d-screen > .scr { position: absolute; inset: 0; opacity: 0; transition: opacity .5s; }
   .js .dstage .d-screen > .scr img { position: absolute; inset: 0; }
-  .js .dstage .d-screen > .scr .more { opacity: var(--s, 0); }
+  .js .dstage .more { opacity: 0; transition: opacity .5s; }
+  .js .dstage[data-more="1"] .more { opacity: 1; }
   .js .dstage[data-state="book-today"] .scr.today, .js .dstage[data-state="book-history"] .scr.history, .js .dstage[data-state="book-workout"] .scr.workout, .js .dstage .f-cover .scr, .js .dstage .f-flat .scr { opacity: 1; }
-  .js .dstage .f-table .more { opacity: var(--s, 0); }
   .js .dstep { min-height: 78vh; justify-content: center; align-items: flex-start; text-align: left; opacity: .28; transition: opacity .4s; padding: 20px 0; }
   .js .dstep.long { min-height: 110vh; }
   .js .dstep.on { opacity: 1; }

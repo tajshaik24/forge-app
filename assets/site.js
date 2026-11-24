@@ -120,7 +120,7 @@
     steps.forEach(function (s) { sio.observe(s); });
   }
 
-  /* iPhone Duo: the sticky frame folds, opens and props up as the steps pass; --s is how far the screen has scrolled */
+  /* iPhone Duo: the sticky frame folds, opens and props up as the steps pass; data-more flips once a step is past its midpoint, which fades in the scrolled or resting screen */
   var dstage = $('.dstage'), dsteps = $$('.dstep');
   if (dstage && dsteps.length && !reduce) {
     var dtick = false;
@@ -134,9 +134,8 @@
       });
       var r = dsteps[cur].getBoundingClientRect();
       var p = Math.max(0, Math.min(1, (mid - r.top) / Math.max(1, r.height)));
-      var s = Math.max(0, Math.min(1, (p - 0.3) / 0.4));
       dstage.dataset.state = dsteps[cur].dataset.state;
-      dstage.style.setProperty('--s', (s * s * (3 - 2 * s)).toFixed(3));
+      dstage.dataset.more = p > 0.5 ? '1' : '0';
       dsteps.forEach(function (st, i) { st.classList.toggle('on', i === cur); });
     };
     var dqueue = function () { if (!dtick) { dtick = true; requestAnimationFrame(dpaint); } };

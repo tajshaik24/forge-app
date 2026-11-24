@@ -322,3 +322,77 @@ footer .sp { margin-right: auto; }
 }
 .final p.invite { margin: 28px auto 0; font-size: 16px; overflow-wrap: anywhere; }
 .final p.invite a { color: var(--ice-text); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
+/* iPhone Duo */
+.d-bezel { background: linear-gradient(145deg, #4a5460, #14181d 22%, #07090b 60%, #2c333c);
+  box-shadow: 0 0 0 1px #000, inset 0 0 0 1.5px rgba(255,255,255,.14), 0 50px 90px -30px rgba(0,0,0,.9), 0 0 90px -20px rgba(63,182,232,.38); }
+.d-cover, .d-book, .d-flat { --w: 300px; width: var(--w); position: relative; padding: calc(var(--w) * .03); }
+.d-cover { border-radius: calc(var(--w) * .16); }
+.d-cover .d-screen { aspect-ratio: 466 / 678; border-radius: calc(var(--w) * .13); }
+.d-flat { border-radius: calc(var(--w) * .075); padding: calc(var(--w) * .026); }
+.d-flat .d-screen { aspect-ratio: 669 / 951; border-radius: calc(var(--w) * .05); }
+.d-book { border-radius: calc(var(--w) * .05); padding: calc(var(--w) * .017); }
+.d-book .d-screen { aspect-ratio: 951 / 669; border-radius: calc(var(--w) * .034); }
+.d-screen { position: relative; overflow: hidden; background: #F2F6F9; }
+.d-screen img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.d-screen img + img { position: absolute; inset: 0; }
+.d-book .d-screen::after { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 4%; margin-left: -2%; pointer-events: none;
+  background: linear-gradient(90deg, rgba(14,18,22,0) 0%, rgba(14,18,22,.16) 38%, rgba(14,18,22,.34) 50%, rgba(255,255,255,.12) 52%, rgba(14,18,22,0) 100%); }
+.d-flat .d-screen::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 2.4%; margin-top: -1.2%; pointer-events: none;
+  background: linear-gradient(180deg, rgba(14,18,22,0) 0%, rgba(14,18,22,.12) 40%, rgba(14,18,22,.22) 50%, rgba(255,255,255,.1) 54%, rgba(14,18,22,0) 100%); }
+
+/* Half-open: the top half leans back, the bottom half lies flat */
+.d-table { --w: 340px; width: var(--w); position: relative; perspective: calc(var(--w) * 3.4); }
+.d-half { position: relative; background: linear-gradient(160deg, #3d4650, #0c0f12 45%, #1c2127); padding: calc(var(--w) * .026); }
+.d-half .d-screen { aspect-ratio: 669 / 475.5; }
+.d-half .d-screen img { position: absolute; left: 0; width: 100%; height: 200%; max-width: none; }
+.d-top { border-radius: calc(var(--w) * .075) calc(var(--w) * .075) calc(var(--w) * .012) calc(var(--w) * .012); padding-bottom: calc(var(--w) * .012);
+  transform: rotateX(-14deg); transform-origin: 50% 100%; box-shadow: 0 0 0 1px #000, inset 0 0 0 1.5px rgba(255,255,255,.14), 0 -30px 80px -30px rgba(63,182,232,.38); }
+.d-top .d-screen { border-radius: calc(var(--w) * .05) calc(var(--w) * .05) 0 0; }
+.d-top .d-screen img { top: 0; bottom: auto; }
+.d-bottom { border-radius: calc(var(--w) * .012) calc(var(--w) * .012) calc(var(--w) * .075) calc(var(--w) * .075); padding-top: calc(var(--w) * .012); margin-top: calc(var(--w) * .008);
+  transform: rotateX(10deg); transform-origin: 50% 0; box-shadow: 0 0 0 1px #000, inset 0 0 0 1.5px rgba(255,255,255,.14), 0 50px 80px -30px rgba(0,0,0,.9); }
+.d-bottom .d-screen { border-radius: 0 0 calc(var(--w) * .05) calc(var(--w) * .05); }
+.d-bottom .d-screen img { bottom: 0; top: auto; }
+
+/* Sticky story */
+.dflow { display: grid; grid-template-columns: minmax(0, 1fr); }
+.dstick { display: none; }
+.dsteps { display: grid; }
+.dstep { padding: 20px 0 64px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.dstep .n { font-size: 14px; font-weight: 800; letter-spacing: .12em; color: var(--violet-text); margin-bottom: 14px; }
+.dstep h3 { font-size: clamp(28px, 3.6vw, 44px); letter-spacing: -.025em; line-height: 1.08; font-weight: 800; }
+.dstep p { color: var(--muted); margin-top: 14px; max-width: 26em; font-size: clamp(17px, 1.6vw, 19px); }
+.dfig { margin: 30px 0 0; display: grid; justify-items: center; gap: 26px; width: 100%; }
+.dfig figure { margin: 0; display: grid; justify-items: center; gap: 12px; width: 100%; }
+.dfig figcaption { font-size: 14px; color: var(--muted); }
+.dfig .d-cover { --w: min(220px, 60vw); }
+.dfig .d-book { --w: min(520px, 100%); }
+.dfig .d-flat { --w: min(300px, 74vw); }
+.dfig .d-table { --w: min(300px, 74vw); }
+.dnote { text-align: center; color: var(--muted); max-width: 34em; margin: 8px auto 0; }
+.dcap { font-size: 13px; color: var(--muted); margin-top: 16px; text-align: center; }
+
+@media (min-width: 861px) and (prefers-reduced-motion: no-preference) {
+  .js .dflow { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 90px); align-items: start; }
+  .js .dstick { display: flex; position: sticky; top: max(84px, calc(50vh - 340px)); height: min(680px, calc(100vh - 100px)); justify-content: center; align-items: center; flex-direction: column; }
+  .js .dstick::before { content: ""; position: absolute; width: 720px; height: 720px; max-width: 100%; border-radius: 50%; background: radial-gradient(circle 240px at 66% 36%, rgba(160,140,255,.4), transparent), radial-gradient(circle 240px at 34% 64%, rgba(63,182,232,.4), transparent); animation: spin 18s linear infinite; }
+  .js .dstage { position: relative; width: 100%; height: 100%; }
+  .js .dstage .d-frame { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) scale(.9); opacity: 0; visibility: hidden; transition: opacity .6s, transform .6s cubic-bezier(.2,.7,.2,1), visibility 0s .6s; }
+  .js .dstage[data-state="cover"] .f-cover, .js .dstage[data-state^="book"] .f-book, .js .dstage[data-state="table"] .f-table, .js .dstage[data-state="flat"] .f-flat { opacity: 1; visibility: visible; transform: translate(-50%, -50%); transition: opacity .6s, transform .6s cubic-bezier(.2,.7,.2,1), visibility 0s; }
+  .js .dstage .f-cover { --w: min(250px, calc((100vh - 140px) * .6)); }
+  .js .dstage .f-book { --w: min(540px, 100%); }
+  .js .dstage .f-table { --w: min(310px, calc((100vh - 150px) * .43)); }
+  .js .dstage .f-flat { --w: min(300px, calc((100vh - 150px) * .55)); }
+  .js .dstage .d-screen > .scr { position: absolute; inset: 0; opacity: 0; transition: opacity .5s; }
+  .js .dstage .d-screen > .scr img { position: absolute; inset: 0; }
+  .js .dstage .d-screen > .scr .more { opacity: var(--s, 0); }
+  .js .dstage[data-state="book-today"] .scr.today, .js .dstage[data-state="book-history"] .scr.history, .js .dstage[data-state="book-workout"] .scr.workout, .js .dstage .f-cover .scr, .js .dstage .f-flat .scr { opacity: 1; }
+  .js .dstage .f-table .more { opacity: var(--s, 0); }
+  .js .dstep { min-height: 78vh; justify-content: center; align-items: flex-start; text-align: left; opacity: .28; transition: opacity .4s; padding: 20px 0; }
+  .js .dstep.long { min-height: 110vh; }
+  .js .dstep.on { opacity: 1; }
+  .js .dstep .dfig { display: none; }
+  .js .dstep .n { display: flex; align-items: center; gap: 12px; }
+  .js .dstep .n::after { content: ""; height: 1px; width: 56px; background: linear-gradient(90deg, var(--violet), transparent); }
+}

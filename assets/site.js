@@ -120,6 +120,31 @@
     steps.forEach(function (s) { sio.observe(s); });
   }
 
+  /* iPhone Duo: the sticky frame folds, opens and props up as the steps pass; --s is how far the screen has scrolled */
+  var dstage = $('.dstage'), dsteps = $$('.dstep');
+  if (dstage && dsteps.length && !reduce) {
+    var dtick = false;
+    var dpaint = function () {
+      dtick = false;
+      var mid = window.innerHeight * 0.5, cur = 0, best = Infinity;
+      dsteps.forEach(function (st, i) {
+        var r = st.getBoundingClientRect();
+        var d = mid < r.top ? r.top - mid : (mid > r.bottom ? mid - r.bottom : 0);
+        if (d < best) { best = d; cur = i; }
+      });
+      var r = dsteps[cur].getBoundingClientRect();
+      var p = Math.max(0, Math.min(1, (mid - r.top) / Math.max(1, r.height)));
+      var s = Math.max(0, Math.min(1, (p - 0.3) / 0.4));
+      dstage.dataset.state = dsteps[cur].dataset.state;
+      dstage.style.setProperty('--s', (s * s * (3 - 2 * s)).toFixed(3));
+      dsteps.forEach(function (st, i) { st.classList.toggle('on', i === cur); });
+    };
+    var dqueue = function () { if (!dtick) { dtick = true; requestAnimationFrame(dpaint); } };
+    window.addEventListener('scroll', dqueue, { passive: true });
+    window.addEventListener('resize', dqueue);
+    dpaint();
+  }
+
   /* Lock Screen illustration: rest counts down, the alert arrives, "+30 s" is tapped, repeat */
   var clocks = $$('[data-rest]'), bar = $('#rest-bar'), note = $('#rest-note'), add = $('#rest-add');
   if (clocks.length) {

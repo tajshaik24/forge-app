@@ -336,11 +336,6 @@ footer .sp { margin-right: auto; }
 .d-screen { position: relative; overflow: hidden; background: #F2F6F9; }
 .d-screen img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .d-screen img + img { position: absolute; inset: 0; }
-.d-book .d-screen::after { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 4%; margin-left: -2%; pointer-events: none;
-  background: linear-gradient(90deg, rgba(14,18,22,0) 0%, rgba(14,18,22,.16) 38%, rgba(14,18,22,.34) 50%, rgba(255,255,255,.12) 52%, rgba(14,18,22,0) 100%); }
-.d-flat .d-screen::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 2.4%; margin-top: -1.2%; pointer-events: none;
-  background: linear-gradient(180deg, rgba(14,18,22,0) 0%, rgba(14,18,22,.12) 40%, rgba(14,18,22,.22) 50%, rgba(255,255,255,.1) 54%, rgba(14,18,22,0) 100%); }
-
 /* Half-open: the top half leans back, the bottom half lies flat */
 .d-table { --w: 340px; width: var(--w); position: relative; perspective: calc(var(--w) * 3.4); }
 .d-half { position: relative; background: linear-gradient(160deg, #3d4650, #0c0f12 45%, #1c2127); padding: calc(var(--w) * .026); }

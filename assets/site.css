@@ -395,4 +395,3 @@ footer .sp { margin-right: auto; }
 /* Build 27 sections */
 h3.big { font-size: clamp(28px, 3.4vw, 40px); line-height: 1.1; letter-spacing: -.02em; font-weight: 800; }
 .copy > h3.big + p { margin-top: 18px; }
-footer .credits { flex-basis: 100%; font-size: 13px; line-height: 1.5; opacity: .8; max-width: 820px; margin: 0; }
